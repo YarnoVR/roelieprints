@@ -26,11 +26,11 @@ document.getElementById('theme-toggle').onclick = () => {
     localStorage.setItem('theme', theme);
 };
 
-// PRODUCTEN
+// PRODUCTEN DATABASE MET HOOFDLETTERS
 const products = [
-    { name: "Capital Name", price: "€19.95", image: "img/CapitalJ.jpg" },
-    { name: "Gepersonaliseerde Vaas", price: "€19.95", image: "img/vaas.jpg" },
-    { name: "Naamplaatje", price: "€4.95", image: "img/tag.jpg" }
+    { name: "Capital Letter", price: "€14.50", image: "img/CapitalJ.jpg" },
+    { name: "Gepersonaliseerde Vaas", price: "€19.95", image: "img/Vaas.jpg" },
+    { name: "Naamplaatje", price: "€4.95", image: "img/Tag.jpg" }
 ];
 
 const grid = document.getElementById('productGrid');
@@ -48,8 +48,8 @@ if (grid) {
     });
 }
 
-// VIEWER
-const models = ["dragon.glb", "vase.glb", "tag.glb"];
+// VIEWER MODELLEN MET HOOFDLETTERS
+const models = ["Dragon.glb", "Vase.glb", "Tag.glb"];
 const names = ["Articulated Dragon", "Gepersonaliseerde Vaas", "Naamplaatje"];
 let cur = 0;
 const v = document.getElementById('mainViewer');
