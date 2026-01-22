@@ -1,0 +1,483 @@
+/* --- BASIS INSTELLINGEN & KLEUREN --- */
+:root {
+    --primary-blue: #3498db;
+    --text-color: #2c3e50;
+    --white: #ffffff;
+    --bg-color: #f7fbfe;
+    --nav-height: 80px;
+    --font-main: 'Outfit', sans-serif;
+}
+
+[data-theme="dark"] {
+    --text-color: #ecf0f1;
+    --white: #1a1a1a;
+    --bg-color: #0f172a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding-top: var(--nav-height);
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- STABIELE ACHTERGROND DECORATIE --- */
+.fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Zichtbaar grid in lichte modus */
+.grid-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--primary-blue) 0.8px, transparent 0.8px);
+    background-size: 50px 50px;
+    opacity: 0.15;
+}
+
+/* Blauwe gloed (blobs) diepte geven */
+.blob-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(52, 152, 219, 0.25), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(52, 152, 219, 0.25), transparent 45%);
+    filter: blur(70px);
+}
+
+[data-theme="dark"] .grid-layer { opacity: 0.05; }
+[data-theme="dark"] .blob-layer { opacity: 0.4; }
+
+/* --- NAVIGATIE --- */
+nav {
+    height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] nav {
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom-color: rgba(255,255,255,0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--text-color); font-weight: 300; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li { margin-left: 2.5rem; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary-blue); }
+
+/* --- HERO / HOMESCHERM --- */
+header {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 45px;
+    opacity: 0.85;
+    max-width: 650px;
+    font-weight: 300;
+}
+
+/* --- SECTIE TITELS --- */
+.section-header {
+    text-align: center;
+    margin: 110px 0 55px;
+    width: 100%;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 12px;
+}
+
+/* --- 3D VIEWER --- */
+.viewer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.viewer-container {
+    flex: 1;
+    height: 500px;
+    background: var(--white);
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    border: 1px solid rgba(52,152,219,0.12);
+}
+
+model-viewer { width: 100%; height: 100%; }
+
+.nav-btn {
+    background: var(--white);
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+    margin: 0 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.nav-btn:hover { transform: scale(1.1); background: var(--primary-blue); color: white; }
+
+/* --- PRODUCTEN GRID --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    padding: 0 10% 100px;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 35px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.03);
+    border: 1px solid rgba(52,152,219,0.08);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover { transform: translateY(-12px); border-color: var(--primary-blue); }
+
+.product-img-container {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 22px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    background: #f0f4f8;
+}
+
+.product-img { width: 100%; height: 100%; object-fit: cover; }
+
+.price {
+    display: block;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 1.35rem;
+}
+
+/* --- INSTAGRAM SECTIE --- */
+.insta-badge { display: flex; justify-content: center; margin-bottom: 20px; }
+
+.insta-badge i {
+    font-size: 4.5rem;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.insta-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 950px;
+    margin: 0 auto 45px;
+    padding: 0 20px;
+}
+
+.insta-pic { aspect-ratio: 1; border-radius: 22px; overflow: hidden; box-shadow: 0 12px 25px rgba(0,0,0,0.07); }
+.insta-pic img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.insta-pic:hover img { transform: scale(1.1); }
+
+/* --- KNOOP STYLING --- */
+.btn {
+    padding: 18px 42px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.btn.primary {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+}
+
+.btn.primary:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4); }
+
+.btn.insta-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+}
+
+.center-btn { text-align: center; margin-bottom: 100px; }
+
+/* --- SPLASH SCREEN --- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#splash-screen.fade-out { opacity: 0; visibility: hidden; transform: scale(1.08); }
+
+.splash-content { text-align: center; }
+
+.splash-logo {
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+
+.splash-logo span { color: var(--text-color); font-weight: 300; }
+
+.splash-tagline {
+    font-size: 0.85rem;
+    letter-spacing: 7px;
+    opacity: 0.5;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}
+
+/* --- EXTRA ELEMENTEN --- */
+.mail-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 35px;
+    right: 35px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4000;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.35);
+    transition: 0.3s;
+}
+
+.mail-float:hover { transform: scale(1.1) rotate(-10deg); }
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.theme-btn:hover { transform: rotate(20deg); color: var(--primary-blue); }
+
+.moon-icon { display: none; }
+[data-theme="dark"] .moon-icon { display: block; }
+[data-theme="dark"] .sun-icon { display: none; }
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .nav-container { padding: 0 5%; }
+    .product-grid { padding: 0 5% 80px; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Burger menu logica nog nodig voor mobiel indien gewenst */
+    .hero-content h1 { font-size: 2.8rem; }
+    .section-header h2 { font-size: 2.2rem; }
+    .viewer-container { height: 400px; }
+    .insta-preview-grid { grid-template-columns: repeat(2, 1fr); }
+    .insta-pic:last-child { display: none; }
+    .nav-btn { margin: 0 10px; width: 45px; height: 45px; }
+}
+
+/* --- OVER MIJ SECTIE VERFIJNING --- */
+#about {
+    padding: 100px 10%;
+    background: rgba(52, 152, 219, 0.05); /* Iets meer kleur voor de ingenieurs-look */
+    border-radius: 40px;
+    margin: 80px 5%;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1.5;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+    #about { margin: 40px 20px; padding: 60px 20px; }
+    .about-wrapper { flex-direction: column; text-align: center; }
+    .about-text .section-header { text-align: center !important; }
+}
+
+/* --- SKILLS TAGS --- */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0 35px;
+}
+
+.skills-tags span {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--primary-blue);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.skills-tags i {
+    font-size: 0.8rem;
+}
+
+/* Aanpassing splash-screen tekst */
+.splash-tagline {
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    opacity: 0.6;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
