@@ -64,3 +64,29 @@ function updateV() {
     v.src = `models/${models[cur]}`;
     t.innerText = `Model: ${names[cur]}`;
 }
+
+const menu = document.querySelector('#mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
+
+// Open/sluit menu
+menu.addEventListener('click', () => {
+    menu.classList.toggle('is-active');
+    navLinks.classList.toggle('active');
+
+    // Voorkom scrollen als menu open is
+    if(navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Sluit menu als je op een link klikt (handig bij anchor links)
+navItems.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('is-active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
