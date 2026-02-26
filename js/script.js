@@ -49,8 +49,8 @@ if (grid) {
 }
 
 // VIEWER MODELLEN MET HOOFDLETTERS
-const models = ["Dragon.glb", "Vase.glb", "Tag.glb"];
-const names = ["Articulated Dragon", "Gepersonaliseerde Vaas", "Naamplaatje"];
+const models = ["AngryCat.glb", "Jill.glb", "SabiVinz.glb"];
+const names = ["Boze kat bij het raam", "Naam Plaatje", "Dubbele naam op voet"];
 let cur = 0;
 const v = document.getElementById('mainViewer');
 const t = document.getElementById('model-title');
