@@ -49,8 +49,8 @@ if (grid) {
 }
 
 // VIEWER MODELLEN MET HOOFDLETTERS
-const models = ["AngryCat.glb", "Jill.glb", "SabiVinz.glb"];
-const names = ["Boze kat bij het raam", "Naam Plaatje", "Dubbele naam op voet"];
+const models = ["Victoria.glb", "LetterName.glb", "SabiVinz.glb"];
+const names = ["Victoria's Angels LED sign", "Naam Plaatje", "Dubbele naam op voet"];
 let cur = 0;
 const v = document.getElementById('mainViewer');
 const t = document.getElementById('model-title');
