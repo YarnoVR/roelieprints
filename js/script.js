@@ -28,9 +28,9 @@ document.getElementById('theme-toggle').onclick = () => {
 
 // PRODUCTEN DATABASE MET HOOFDLETTERS
 const products = [
-    { name: "Capital Letter", price: "€14.50", image: "img/CapitalJ.jpg" },
-    { name: "Gepersonaliseerde Vaas", price: "€19.95", image: "img/Vaas.jpg" },
-    { name: "Naamplaatje", price: "€4.95", image: "img/Tag.jpg" }
+    { name: "Capital Letter", price: "€14.95", image: "img/CapitalJ.jpg" },
+    { name: "Gepersonaliseerd LED sign", price: "€24.95", image: "img/Victoria.jpg" },
+    { name: "Dubbele naam", price: "€9.95", image: "img/DubbeleNaam.jpg" }
 ];
 
 const grid = document.getElementById('productGrid');
