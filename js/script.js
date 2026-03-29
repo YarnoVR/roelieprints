@@ -103,13 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (splash) {
     document.body.style.overflow = 'hidden';
+    let ticking = false;
+
     document.addEventListener('mousemove', (e) => {
-      if (!splash.classList.contains('fade-out')) {
-        const x = (window.innerWidth / 2 - e.clientX) / 40;
-        const y = (window.innerHeight / 2 - e.clientY) / 40;
-        splashParallax.style.transform = `translate(${x}px, ${y}px)`;
+      if (!splash.classList.contains('fade-out') && !ticking) {
+        window.requestAnimationFrame(() => {
+          const x = (window.innerWidth / 2 - e.clientX) / 40;
+          const y = (window.innerHeight / 2 - e.clientY) / 40;
+          splashParallax.style.transform = `translate(${x}px, ${y}px)`;
+          ticking = false;
+        });
+        ticking = true;
       }
     });
+
     enterBtn.onclick = () => {
       splash.classList.add('fade-out');
       document.body.style.overflow = 'auto';

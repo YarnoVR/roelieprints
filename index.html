@@ -22,7 +22,7 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js" async></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js" defer></script>
 </head>
 
 <body>
@@ -81,7 +81,7 @@
           <div class="integrated-viewer-wrapper">
             <button class="nav-btn-organic" id="prevModel" aria-label="Vorig 3D model"><i class="fas fa-chevron-left"></i></button>
             <div class="viewer-container-organic">
-              <model-viewer id="mainViewer" src="models/LetterName.glb" auto-rotate camera-controls shadow-intensity="1" alt="3D model preview"></model-viewer>
+              <model-viewer id="mainViewer" src="models/LetterName.glb" loading="lazy" auto-rotate camera-controls shadow-intensity="1" alt="3D model preview"></model-viewer>
               <p id="model-title" class="viewer-caption-organic">Naam Plaatje</p>
             </div>
             <button class="nav-btn-organic" id="nextModel" aria-label="Volgend 3D model"><i class="fas fa-chevron-right"></i></button>
