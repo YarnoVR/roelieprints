@@ -39,27 +39,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-radius: 4px;
 }
 
-.tab-content {
-  display: none;
-  animation: fadeIn 0.4s ease;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .fixed-bg {
   position: fixed;
   top: 0;
@@ -117,18 +96,18 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 5%;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .logo {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: var(--primary-blue);
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
 .logo span {
@@ -354,7 +333,12 @@ model-viewer {
   align-items: center;
   gap: 80px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 5%;
+  padding: 50px;
+  background: var(--white);
+  border-radius: 35px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(52, 152, 219, 0.08);
 }
 
 .about-image {
@@ -588,23 +572,18 @@ model-viewer {
   color: var(--primary-blue);
 }
 
-.moon-icon {
-  display: none;
-}
-
-[data-theme="dark"] .moon-icon {
-  display: block;
-}
-
-[data-theme="dark"] .sun-icon {
-  display: none;
-}
 
 .menu-toggle {
   display: none;
   background: transparent;
   border: none;
   padding: 10px;
+}
+
+@media (min-width: 1300px) {
+  .about-wrapper {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 992px) {
@@ -635,7 +614,7 @@ model-viewer {
     max-width: 300px;
   }
 
-  .btn {
+  .hero-btns .btn {
     width: 100%;
     text-align: center;
   }
@@ -657,6 +636,7 @@ model-viewer {
     flex-direction: column;
     text-align: center;
     gap: 40px;
+    padding: 35px 20px;
   }
 
   .about-text .section-header {
