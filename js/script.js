@@ -4,7 +4,7 @@ const products = [
   { name: "Dubbele naam", price: "€7.95", image: "img/DubbeleNaam.webp", category: "3d" },
   { name: "Gepersonaliseerde Stanley Beker", price: "Surplus van €14.95", image: "img/StanleyVinyl.webp", category: "vinyl" },
     { name: "Gepersonaliseerde Kambukka Drinkfles", price: "Surplus van 14.95", image: "img/Kambukka.webp", category: "vinyl" },
-  { name: "Instagram Tag", price: "€5.95", image: "img/Instatag.webp", category: "vinyl" }
+  { name: "Instagram Tag", price: "€6.95", image: "img/Instatag.webp", category: "vinyl" }
 ];
 
 function renderProducts(filter = 'all') {
