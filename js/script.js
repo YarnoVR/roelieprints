@@ -1,10 +1,10 @@
 const products = [
   { name: "Capital Letter", price: "€14.95", image: "img/CapitalJ.webp", category: "3d" },
   { name: "Gepersonaliseerd LED sign", price: "€24.95", image: "img/Victoria.webp", category: "3d" },
-  { name: "Dubbele naam", price: "€9.95", image: "img/DubbeleNaam.webp", category: "3d" },
+  { name: "Dubbele naam", price: "€7.95", image: "img/DubbeleNaam.webp", category: "3d" },
   { name: "Gepersonaliseerde Stanley Beker", price: "Surplus van €14.95", image: "img/StanleyVinyl.webp", category: "vinyl" },
     { name: "Gepersonaliseerde Kambukka Drinkfles", price: "Surplus van 14.95", image: "img/Kambukka.webp", category: "vinyl" },
-  { name: "Instagram Tag", price: "€9.95", image: "img/Instatag.webp", category: "vinyl" }
+  { name: "Instagram Tag", price: "€5.95", image: "img/Instatag.webp", category: "vinyl" }
 ];
 
 function renderProducts(filter = 'all') {
