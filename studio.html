@@ -1,84 +1,82 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio | RoeliePrints</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://www.roelieprints.eu/studio.html">
-  <meta name="description" content="Leer industrieel ingenieur Yarno kennen en neem een kijkje achter de schermen in de studio van RoeliePrints.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Mij | Roelie Prints</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a202c; }
+        .studio-img { border-radius: 2rem; overflow: hidden; border: 1px solid #e2e8f0; }
+        .skill-badge { background: white; border: 1px solid #e2e8f0; padding: 10px 20px; border-radius: 12px; font-size: 13px; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+    </style>
 </head>
 <body>
-  <div class="fixed-bg" aria-hidden="true">
-    <div class="grid-layer"></div>
-    <div class="blob-layer"></div>
-  </div>
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Roelie<span>Prints</span></a>
-      <button class="menu-toggle" id="mobile-menu" aria-label="Open navigatiemenu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
+          Roelie<span class="text-gray-900">Prints</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8 font-bold text-sm">
+          <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
+          <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
+          <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
+          <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+              Stuur een bericht
+          </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900">
+          <i class="fas fa-bars"></i>
       </button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="tab-link">Ontdek</a></li>
-        <li><a href="creaties.html" class="tab-link">Creaties</a></li>
-        <li><a href="studio.html" class="tab-link active">Studio</a></li>
-        <li><a href="contact.html" class="tab-link">Start Project</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-btn" aria-label="Wissel licht/donker thema">
-  <i class="fas fa-circle-half-stroke" aria-hidden="true"></i>
-</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <section style="padding-top: 40px;">
-      <div class="container about-wrapper">
-        <div class="about-image">
-          <img src="img/Roelie.webp" alt="Yarno, eigenaar van RoeliePrints, in zijn studio" loading="lazy">
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
+      <a href="index.html" class="block hover:text-indigo-600">Ontdek</a>
+      <a href="creaties.html" class="block hover:text-indigo-600">Mijn Werk</a>
+      <a href="studio.html" class="block hover:text-indigo-600">Over Mij</a>
+      <a href="contact.html" class="block text-indigo-600">Contact</a>
+  </div>
+</nav>
+
+    <main class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="studio-img shadow-2xl">
+                <img src="img/Roelie.webp" class="w-full h-auto grayscale hover:grayscale-0 transition duration-1000" alt="Yarno Van Rulo">
+            </div>
+            <div class="space-y-8">
+                <h1 class="text-5xl font-800 tracking-tight">Hoi, ik ben <span class="text-indigo-600">Yarno.</span></h1>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Wat begon als een fascinatie voor techniek is uitgegroeid tot <strong>Roelie Prints</strong>. Als industrieel ingenieur kijk ik net iets anders naar een ontwerp. Ik wil niet alleen dat het er mooi uitziet, maar ook dat het technisch klopt en functioneel is.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    In mijn kleinschalige studio in België werk ik met oog voor detail aan jouw project. Of je nu een kant-en-klaar bestand hebt of hulp nodig hebt bij het tekenen van een onderdeel: ik denk graag met je mee.
+                </p>
+
+                <div class="pt-6">
+                    <h3 class="font-bold text-sm uppercase tracking-widest text-gray-400 mb-4">Waar ik je mee help:</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-badge">Technisch CAD-ontwerp</div>
+                        <div class="skill-badge">Functioneel 3D-printen</div>
+                        <div class="skill-badge">Vinyl & Stickers</div>
+                        <div class="skill-badge">Prototyping</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="about-text">
-          <div class="section-header" style="margin-top: 0; text-align: left;">
-            <h2>Achter de Printer & Plotter</h2>
-          </div>
-          <p>Mijn naam is <strong>Yarno</strong>, maar velen kennen me als <strong>Roelie</strong>. Als industrieel ingenieur ben ik gefascineerd door de brug tussen een digitaal concept en een tastbaar product.</p>
-          <p>In mijn <strong>studio</strong> staan mijn printers en snijplotters klaar om projecten tot leven te wekken. Dankzij mijn ervaring in <strong>CAD-ontwerp</strong> help ik je niet alleen met printen, maar denk ik ook technisch met je mee.</p>
-          <div class="skills-tags" aria-label="Vaardigheden">
-            <span><i class="fas fa-drafting-compass" aria-hidden="true"></i> CAD Design</span>
-            <span><i class="fas fa-layer-group" aria-hidden="true"></i> 3D Printing</span>
-            <span><i class="fas fa-scissors" aria-hidden="true"></i> Vinyl Cutting</span>
-            <span><i class="fas fa-microchip" aria-hidden="true"></i> Prototyping</span>
-            <span><i class="fas fa-tools" aria-hidden="true"></i> Technical Support</span>
-          </div>
-          <a href="contact.html" class="btn primary">Start Project</a>
-        </div>
-      </div>
-    </section>
-    <section id="instagram" style="padding-top: 80px;">
-      <div class="section-header">
-        <div class="insta-badge"><i class="fab fa-instagram" aria-hidden="true"></i></div>
-        <h2>@roelie.prints</h2>
-      </div>
-      <div class="insta-preview-grid">
-        <div class="insta-pic"><img src="img/Insta1.webp" alt="Instagram post 1 van RoeliePrints" loading="lazy"></div>
-        <div class="insta-pic"><img src="img/Insta2.webp" alt="Instagram post 2 van RoeliePrints" loading="lazy"></div>
-        <div class="insta-pic"><img src="img/Insta3.jpg" alt="Instagram post 3 van RoeliePrints" loading="lazy"></div>
-      </div>
-      <div class="center-btn">
-        <a href="https://www.instagram.com/roelie.prints/" target="_blank" rel="nofollow noopener noreferrer" class="btn insta-btn">Volg op Instagram</a>
-      </div>
-    </section>
-  </main>
-  <script src="js/script.js" defer></script>
+    </main>
+
+    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+        <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
+    </footer>
+
 </body>
 </html>

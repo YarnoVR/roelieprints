@@ -1,86 +1,137 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RoeliePrints | 3D Printing, Vinyl Stickers & CAD Design</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://www.roelieprints.eu/">
-<meta name="description" content="RoeliePrints levert hoogwaardige 3D-prints, gepersonaliseerde vinyl stickers en technisch CAD-ontwerp. Innovatie op maat door industrieel ingenieur Yarno.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "RoeliePrints",
-    "url": "https://www.roelieprints.eu/",
-    "description": "Hoogwaardige 3D-prints, gepersonaliseerde vinyl stickers en technisch CAD-ontwerp.",
-    "sameAs": ["https://www.instagram.com/roelie.prints/"]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roelie Prints | 3D-printen & Ontwerp door Yarno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a202c; }
+        .hero-bg { background-color: #f8f9fa; border-bottom: 1px solid #e2e8f0; }
+        .btn-indigo { background-color: #4f46e5; transition: all 0.3s; }
+        .btn-indigo:hover { background-color: #4338ca; transform: translateY(-2px); }
+        .photo-card { border-radius: 1.5rem; overflow: hidden; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .photo-card:hover { border-color: #4f46e5; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    </style>
 </head>
-<body>
-  <div class="fixed-bg" aria-hidden="true">
-    <div class="grid-layer"></div>
-    <div class="blob-layer"></div>
-  </div>
-  <div id="splash-screen">
-    <div class="splash-content" id="splash-parallax">
-      <div class="splash-logo">Roelie<span>Prints</span></div>
-      <p class="splash-tagline">Innovation in every layer & cut</p>
-      <button id="enter-btn" class="btn primary" aria-label="Betreed de website">Bekijk Mijn Werkplek</button>
-    </div>
-  </div>
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Roelie<span>Prints</span></a>
-      <button class="menu-toggle" id="mobile-menu" aria-label="Open navigatiemenu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="tab-link active">Ontdek</a></li>
-        <li><a href="creaties.html" class="tab-link">Creaties</a></li>
-        <li><a href="studio.html" class="tab-link">Studio</a></li>
-        <li><a href="contact.html" class="tab-link">Start Project</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-btn" aria-label="Wissel licht/donker thema">
-  <i class="fas fa-circle-half-stroke" aria-hidden="true"></i>
-</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <section class="hero-unified">
-      <div class="hero-text-side">
-        <h1>Breng Ideeën tot Leven</h1>
-        <p>Hoogwaardige 3D-prints, gepersonaliseerd vinyl en technisch CAD-ontwerp door een industrieel ingenieur.</p>
-        <div class="hero-btns">
-          <a href="creaties.html" class="btn primary">Bekijk Creaties</a>
-          <a href="contact.html" class="btn secondary">Vraag Project Aan</a>
+<body class="antialiased">
+
+    <!-- Navigatie -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
+            Roelie<span class="text-gray-900">Prints</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 font-bold text-sm">
+            <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
+            <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
+            <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
+            <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+                Stuur een bericht
+            </a>
         </div>
-      </div>
-      <div class="hero-viewer-side">
-        <div class="integrated-viewer-wrapper">
-          <button class="nav-btn-organic" id="prevModel" aria-label="Vorig 3D model"><i class="fas fa-chevron-left"></i></button>
-          <div class="viewer-container-organic">
-            <model-viewer id="mainViewer" src="models/LetterName.glb" loading="lazy" auto-rotate camera-controls shadow-intensity="1" alt="3D model preview"></model-viewer>
-            <p id="model-title" class="viewer-caption-organic">Naam Plaatje</p>
-          </div>
-          <button class="nav-btn-organic" id="nextModel" aria-label="Volgend 3D model"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
+        <a href="index.html" class="block hover:text-indigo-600">Ontdek</a>
+        <a href="creaties.html" class="block hover:text-indigo-600">Mijn Werk</a>
+        <a href="studio.html" class="block hover:text-indigo-600">Over Mij</a>
+        <a href="contact.html" class="block text-indigo-600">Contact</a>
+    </div>
+</nav>
+
+    <!-- Hero: Welkom in de Studio -->
+    <header class="hero-bg pt-20 pb-32 px-6">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h1 class="text-5xl md:text-7xl font-800 tracking-tight leading-tight">
+                    Van ontwerp <br>tot <span class="text-indigo-600">resultaat.</span>
+                </h1>
+                <p class="text-gray-600 text-lg md:text-xl leading-relaxed max-w-md">
+                    Hoi, ik ben <span class="text-gray-900 font-semibold">Yarno</span>. In mijn studio help ik je bij het maken van unieke 3D-prints, technische tekeningen en stickers op maat.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="contact.html" class="btn-indigo text-white px-8 py-4 rounded-xl font-bold text-lg">
+                        Heb je een idee?
+                    </a>
+                    <a href="creaties.html" class="bg-white border border-gray-200 text-gray-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition">
+                        Bekijk creaties
+                    </a>
+                </div>
+            </div>
+
+            <!-- De Porsche foto staat hier centraal -->
+            <div class="photo-card shadow-2xl">
+                <img src="img/porsche-keyholder.jpg" class="w-full h-auto object-cover" alt="Porsche Sleutelhouder">
+                <div class="bg-white p-4 text-center border-t border-gray-100">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Recent project: GT3 Sleutelhouder</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </header>
+
+    <!-- Wat ik voor je doe -->
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-800 uppercase tracking-tight">Wat ik voor je kan betekenen</h2>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- 3D Printing -->
+            <div class="space-y-4">
+                <div class="photo-card aspect-square mb-6">
+                    <img src="img/3d-bunnies.jpg" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold">3D-printen op maat</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Of het nu gaat om een uniek cadeau of een technisch onderdeel, ik zorg dat het strak en nauwkeurig uit de printer komt.</p>
+            </div>
+
+            <!-- Stickers -->
+            <div class="space-y-4">
+                <div class="photo-card aspect-square mb-6">
+                    <img src="img/car-vinyl.jpg" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold">Stickers & Vinyl</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Custom stickers voor je auto, raam of bedrijf. Ontworpen en gesneden met oog voor detail.</p>
+            </div>
+
+            <!-- Technisch tekenen -->
+            <div class="space-y-4">
+                <div class="bg-indigo-50 aspect-square rounded-[1.5rem] flex items-center justify-center p-10 border border-indigo-100">
+                    <i class="fas fa-pencil-ruler text-5xl text-indigo-600"></i>
+                </div>
+                <h3 class="text-xl font-bold">Technisch tekenen</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Heb je alleen een idee? Ik zet het om naar een digitaal 3D-ontwerp (CAD) dat klaar is voor productie.</p>
+            </div>
+        </div>
     </section>
-  </main>
-  <script src="js/script.js" defer></script>
+
+    <!-- Persoonlijke afsluiting -->
+    <section class="py-20 bg-gray-900 text-white text-center px-6">
+        <h2 class="text-3xl font-800 mb-6 uppercase tracking-tighter">Samen iets moois maken?</h2>
+        <p class="text-gray-400 mb-10 max-w-lg mx-auto">Geen grote fabriek, maar direct contact. Ik denk graag met je mee over jouw project.</p>
+        <a href="contact.html" class="btn-indigo px-10 py-4 rounded-xl font-bold inline-block">Stuur me een mailtje</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+        <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
+        <div class="mt-4 flex justify-center gap-6 text-lg">
+            <a href="https://www.instagram.com/roelie.prints/" target="_blank" class="hover:text-indigo-600 transition"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
 </body>
 </html>

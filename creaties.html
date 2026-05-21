@@ -1,59 +1,98 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creaties | RoeliePrints</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://www.roelieprints.eu/creaties.html">
-  <meta name="description" content="Bekijk de collectie hoogwaardige 3D-prints en gepersonaliseerde vinyl stickers van RoeliePrints.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Werk | Roelie Prints</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a202c; }
+        .photo-card { border-radius: 1.5rem; overflow: hidden; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .photo-card:hover { border-color: #4f46e5; transform: translateY(-5px); }
+        .tag { background: #f1f5f9; color: #475569; font-size: 10px; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; }
+    </style>
 </head>
 <body>
-  <div class="fixed-bg" aria-hidden="true">
-    <div class="grid-layer"></div>
-    <div class="blob-layer"></div>
-  </div>
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Roelie<span>Prints</span></a>
-      <button class="menu-toggle" id="mobile-menu" aria-label="Open navigatiemenu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="tab-link">Ontdek</a></li>
-        <li><a href="creaties.html" class="tab-link active">Creaties</a></li>
-        <li><a href="studio.html" class="tab-link">Studio</a></li>
-        <li><a href="contact.html" class="tab-link">Start Project</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-btn" aria-label="Wissel licht/donker thema">
-  <i class="fas fa-circle-half-stroke" aria-hidden="true"></i>
-</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <section style="padding-top: 40px;">
-      <div class="section-header">
-        <h2>Creaties</h2>
-        <div class="filter-container" role="group" aria-label="Product filters">
-          <button class="filter-btn active" data-filter="all">Alles</button>
-          <button class="filter-btn" data-filter="3d">3D Prints</button>
-          <button class="filter-btn" data-filter="vinyl">Vinyl Stickers</button>
-        </div>
+
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
+          Roelie<span class="text-gray-900">Prints</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8 font-bold text-sm">
+          <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
+          <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
+          <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
+          <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+              Stuur een bericht
+          </a>
       </div>
-      <div class="product-grid" id="productGrid"></div>
-    </section>
-  </main>
-  <script src="js/script.js" defer></script>
+
+      <!-- Mobile Toggle -->
+      <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900">
+          <i class="fas fa-bars"></i>
+      </button>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
+      <a href="index.html" class="block hover:text-indigo-600">Ontdek</a>
+      <a href="creaties.html" class="block hover:text-indigo-600">Mijn Werk</a>
+      <a href="studio.html" class="block hover:text-indigo-600">Over Mij</a>
+      <a href="contact.html" class="block text-indigo-600">Contact</a>
+  </div>
+</nav>
+
+    <main class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="mb-16">
+            <h1 class="text-4xl md:text-6xl font-800 tracking-tight mb-4">Geselecteerde <span class="text-indigo-600">Creaties.</span></h1>
+            <p class="text-gray-500 text-lg max-w-xl">Een overzicht van projecten die onlangs de studio hebben verlaten. Van functionele tools tot gepersonaliseerde extra's.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Project 1 -->
+            <div class="space-y-4">
+                <div class="photo-card aspect-square">
+                    <img src="img/porsche-keyholder.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center px-2">
+                    <h3 class="font-bold">GT3 Sleutelhouder</h3>
+                    <span class="tag">3D Printing</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="space-y-4">
+                <div class="photo-card aspect-square">
+                    <img src="img/car-vinyl.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center px-2">
+                    <h3 class="font-bold">Auto Bestickering</h3>
+                    <span class="tag">Vinyl</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="space-y-4">
+                <div class="photo-card aspect-square">
+                    <img src="img/3d-bunnies.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center px-2">
+                    <h3 class="font-bold">Decoratieve Prints</h3>
+                    <span class="tag">3D Printing</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+        <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
+    </footer>
+
 </body>
 </html>
