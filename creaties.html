@@ -1,98 +1,235 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Werk | Roelie Prints</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a202c; }
-        .photo-card { border-radius: 1.5rem; overflow: hidden; border: 1px solid #e2e8f0; transition: 0.3s; }
-        .photo-card:hover { border-color: #4f46e5; transform: translateY(-5px); }
-        .tag { background: #f1f5f9; color: #475569; font-size: 10px; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mijn Werk | Roelie Prints</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #ffffff;
+      color: #1a202c;
+    }
+
+    .photo-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+    }
+
+    .photo-card:hover {
+      border-color: #4f46e5;
+      transform: translateY(-5px);
+    }
+
+    .tag {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .filter-btn.active-filter {
+      background-color: #4f46e5;
+      color: white;
+      border-color: #4f46e5;
+    }
+  </style>
 </head>
+
 <body>
 
   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
       <!-- Logo -->
       <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
-          Roelie<span class="text-gray-900">Prints</span>
+        Roelie<span class="text-gray-900">Prints</span>
       </a>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8 font-bold text-sm">
-          <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
-          <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
-          <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
-          <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
-              Stuur een bericht
-          </a>
+        <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
+        <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
+        <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
+        <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+          Stuur een bericht
+        </a>
       </div>
 
       <!-- Mobile Toggle -->
       <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900">
-          <i class="fas fa-bars"></i>
+        <i class="fas fa-bars"></i>
       </button>
-  </div>
+    </div>
 
-  <!-- Mobile Menu (Hidden by default) -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
       <a href="index.html" class="block hover:text-indigo-600">Ontdek</a>
       <a href="creaties.html" class="block hover:text-indigo-600">Mijn Werk</a>
       <a href="studio.html" class="block hover:text-indigo-600">Over Mij</a>
       <a href="contact.html" class="block text-indigo-600">Contact</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-    <main class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="mb-16">
-            <h1 class="text-4xl md:text-6xl font-800 tracking-tight mb-4">Geselecteerde <span class="text-indigo-600">Creaties.</span></h1>
-            <p class="text-gray-500 text-lg max-w-xl">Een overzicht van projecten die onlangs de studio hebben verlaten. Van functionele tools tot gepersonaliseerde extra's.</p>
+  <main class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-6xl font-800 tracking-tight mb-4">Geselecteerde <span class="text-indigo-600">Creaties.</span></h1>
+      <p class="text-gray-500 text-lg max-w-xl">Filter op categorie om te zien wat er mogelijk is in de studio.</p>
+    </div>
+
+    <!-- Filter Knoppen -->
+    <div class="flex flex-wrap gap-3 mb-12">
+      <button class="filter-btn active-filter px-6 py-2 rounded-full border border-gray-200 text-xs font-800 uppercase tracking-widest transition" data-filter="all">Alles</button>
+      <button class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-800 uppercase tracking-widest transition" data-filter="3d">3D Printing</button>
+      <button class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-800 uppercase tracking-widest transition" data-filter="vinyl">Vinyl</button>
+      <button class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-800 uppercase tracking-widest transition" data-filter="textiel">Textiel</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- 1. Emily & Arne -->
+      <div class="portfolio-item space-y-4" data-category="3d">
+        <div class="photo-card aspect-square">
+          <img src="img/naam-trouw.webp" class="w-full h-full object-cover" alt="Emily & Arne 3D">
         </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Project 1 -->
-            <div class="space-y-4">
-                <div class="photo-card aspect-square">
-                    <img src="img/porsche-keyholder.jpg" class="w-full h-full object-cover">
-                </div>
-                <div class="flex justify-between items-center px-2">
-                    <h3 class="font-bold">GT3 Sleutelhouder</h3>
-                    <span class="tag">3D Printing</span>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="space-y-4">
-                <div class="photo-card aspect-square">
-                    <img src="img/car-vinyl.jpg" class="w-full h-full object-cover">
-                </div>
-                <div class="flex justify-between items-center px-2">
-                    <h3 class="font-bold">Auto Bestickering</h3>
-                    <span class="tag">Vinyl</span>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="space-y-4">
-                <div class="photo-card aspect-square">
-                    <img src="img/3d-bunnies.jpg" class="w-full h-full object-cover">
-                </div>
-                <div class="flex justify-between items-center px-2">
-                    <h3 class="font-bold">Decoratieve Prints</h3>
-                    <span class="tag">3D Printing</span>
-                </div>
-            </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Huwelijkscadeau Custom</h3>
+          <span class="tag">3D Printing</span>
         </div>
-    </main>
+      </div>
 
-    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
-        <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
-    </footer>
+      <!-- 2. Jill Letter -->
+      <div class="portfolio-item space-y-4" data-category="3d">
+        <div class="photo-card aspect-square">
+          <img src="img/letter-jill.webp" class="w-full h-full object-cover" alt="Jill Letter">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Initialen met Naam</h3>
+          <span class="tag">3D Printing</span>
+        </div>
+      </div>
+
+      <!-- 3. Gent Tumbler -->
+      <div class="portfolio-item space-y-4" data-category="vinyl">
+        <div class="photo-card aspect-square">
+          <img src="img/gent-beker.webp" class="w-full h-full object-cover" alt="Gent Tumbler">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Custom Tumbler "Gent"</h3>
+          <span class="tag">Vinyl</span>
+        </div>
+      </div>
+
+      <!-- 4. GT3 Sleutelhouder -->
+      <div class="portfolio-item space-y-4" data-category="3d">
+        <div class="photo-card aspect-square">
+          <img src="img/porsche-keyholder.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">GT3 Sleutelhouder</h3>
+          <span class="tag">3D Printing</span>
+        </div>
+      </div>
+
+      <!-- 5. Pingpong Fles -->
+      <div class="portfolio-item space-y-4" data-category="vinyl">
+        <div class="photo-card aspect-square">
+          <img src="img/pingpong-fles.webp" class="w-full h-full object-cover" alt="Pingpong Fles">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Sport Drinkbus Design</h3>
+          <span class="tag">Vinyl</span>
+        </div>
+      </div>
+
+      <!-- 6. Baby Rompers -->
+      <div class="portfolio-item space-y-4" data-category="textiel">
+        <div class="photo-card aspect-square">
+          <img src="img/baby-thys.webp" class="w-full h-full object-cover" alt="Baby Romper">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Babykleding op Maat</h3>
+          <span class="tag">Textiel</span>
+        </div>
+      </div>
+
+      <!-- 7. Auto Bestickering -->
+      <div class="portfolio-item space-y-4" data-category="vinyl">
+        <div class="photo-card aspect-square">
+          <img src="img/car-vinyl.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Auto Bestickering</h3>
+          <span class="tag">Vinyl</span>
+        </div>
+      </div>
+
+      <!-- 8. Decoratieve Prints -->
+      <div class="portfolio-item space-y-4" data-category="3d">
+        <div class="photo-card aspect-square">
+          <img src="img/3d-bunnies.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold">Decoratieve Prints</h3>
+          <span class="tag">3D Printing</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+    <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.portfolio-item');
+
+      buttons.forEach(button => {
+          button.addEventListener('click', () => {
+              // 1. Verwijder actieve kleur van alle knoppen
+              buttons.forEach(btn => {
+                  btn.classList.remove('active-filter', 'bg-indigo-600', 'text-white');
+                  btn.classList.add('bg-white', 'text-gray-900');
+              });
+
+              // 2. Voeg actieve kleur toe aan geklikte knop
+              button.classList.add('active-filter', 'bg-indigo-600', 'text-white');
+              button.classList.remove('bg-white', 'text-gray-900');
+
+              // 3. Filter de items
+              const filterValue = button.getAttribute('data-filter');
+
+              items.forEach(item => {
+                  if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                      item.style.display = 'block';
+                      // Animatie effect
+                      item.style.opacity = '0';
+                      setTimeout(() => {
+                          item.style.opacity = '1';
+                          item.style.transition = 'opacity 0.4s ease';
+                      }, 10);
+                  } else {
+                      item.style.display = 'none';
+                  }
+              });
+          });
+      });
+  });
+  </script>
 
 </body>
+
 </html>
