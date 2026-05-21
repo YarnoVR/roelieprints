@@ -52,62 +52,63 @@
 
         <div class="contact-card shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
             <!-- Formspree Formulier -->
-            <form action="https://formspree.io/f/mdajgopz" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <form action="https://forminit.com/f/dw91y1tsmqk" method="POST" enctype="multipart/form-data" class="space-y-6">
 
-                <!-- Redirect naar bedankt.html (Vervang de URL door jouw live URL) -->
-                <input type="hidden" name="_next" value="https://roelieprints.eu/bedankt.html">
-                <input type="hidden" name="_subject" value="Nieuwe aanvraag via Roelie Prints">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-2">
+            <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Naam</label>
+            <!-- Aangepast naar fi-sender-fullName -->
+            <input type="text" name="fi-sender-fullName" placeholder="Je naam" 
+                class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required>
+        </div>
+        <div class="space-y-2">
+            <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Email</label>
+            <!-- Aangepast naar fi-sender-email -->
+            <input type="email" name="fi-sender-email" placeholder="naam@voorbeeld.nl" 
+                class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required>
+        </div>
+    </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Naam</label>
-                        <input type="text" name="naam" placeholder="Je naam"
-                            class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Email</label>
-                        <input type="email" name="email" placeholder="naam@voorbeeld.nl"
-                            class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required>
-                    </div>
-                </div>
+    <div class="space-y-2">
+        <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Wat wil je laten maken?</label>
+        <div class="relative">
+            <!-- Aangepast naar fi-text-type -->
+            <select name="fi-text-type" 
+                class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl appearance-none outline-none cursor-pointer">
+                <option>3D-printen op maat</option>
+                <option>Technisch ontwerp (CAD)</option>
+                <option>Vinyl / Stickers</option>
+                <option>Iets anders</option>
+            </select>
+            <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                <i class="fas fa-chevron-down text-xs"></i>
+            </div>
+        </div>
+    </div>
 
-                <div class="space-y-2">
-                    <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Wat wil je laten maken?</label>
-                    <div class="relative">
-                        <select name="type"
-                            class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none appearance-none cursor-pointer">
-                            <option>3D-printen op maat</option>
-                            <option>Technisch ontwerp (CAD)</option>
-                            <option>Vinyl / Stickers</option>
-                            <option>Iets anders</option>
-                        </select>
-                        <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
-                </div>
+    <div class="space-y-2">
+        <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Je bericht</label>
+        <!-- Aangepast naar fi-text-message -->
+        <textarea name="fi-text-message" rows="4" placeholder="Vertel me kort wat je idee is..." 
+            class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required></textarea>
+    </div>
 
-                <div class="space-y-2">
-                    <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Je bericht</label>
-                    <textarea name="bericht" rows="4" placeholder="Vertel me kort wat je idee is..."
-                        class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required></textarea>
-                </div>
+    <!-- Bestand Upload -->
+    <div class="relative group">
+        <div class="p-8 border-2 border-dashed border-gray-100 rounded-2xl group-hover:border-indigo-200 group-hover:bg-indigo-50/30 transition-all text-center">
+            <i class="fas fa-cloud-upload-alt text-2xl text-gray-300 mb-2 group-hover:text-indigo-400 transition-colors"></i>
+            <p class="text-[10px] font-800 text-gray-400 uppercase tracking-widest mb-1">Bijlage toevoegen</p>
+            <p id="file-name" class="text-[10px] text-gray-300 uppercase">(.STL, .JPG, .PNG)</p>
+            <!-- Aangepast naar fi-file-attachment -->
+            <input type="file" id="file-upload" name="fi-file-attachment" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+        </div>
+    </div>
 
-                <!-- Bestand Upload -->
-                <div class="relative group">
-                    <div class="p-8 border-2 border-dashed border-gray-100 rounded-2xl group-hover:border-indigo-200 group-hover:bg-indigo-50/30 transition-all text-center">
-                        <i class="fas fa-cloud-upload-alt text-2xl text-gray-300 mb-2 group-hover:text-indigo-400 transition-colors"></i>
-                        <p class="text-[10px] font-800 text-gray-400 uppercase tracking-widest mb-1">Bijlage toevoegen</p>
-                        <p id="file-name" class="text-[10px] text-gray-300 uppercase">(.STL, .JPG, .PNG)</p>
-                        <input type="file" id="file-upload" name="bijlage" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                    </div>
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-indigo-600 text-white py-5 rounded-2xl font-800 text-lg hover:bg-indigo-700 hover:-translate-y-1 shadow-xl shadow-indigo-100 transition-all duration-300">
-                    Bericht versturen
-                </button>
-            </form>
+    <button type="submit" 
+        class="w-full bg-indigo-600 text-white py-5 rounded-2xl font-800 text-lg hover:bg-indigo-700 hover:-translate-y-1 shadow-xl shadow-indigo-100 transition-all duration-300">
+        Bericht versturen
+    </button>
+</form>
         </div>
 
         <div class="mt-16 text-center text-gray-400 text-sm">
