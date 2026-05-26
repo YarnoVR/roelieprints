@@ -59,14 +59,32 @@ function prevModel() {
 }
 
 // --- MOBILE MENU LOGIC ---
-const menuBtn = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const body = document.body;
 
-if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+
+            if (isHidden) {
+                // MENU OPENEN
+                mobileMenu.classList.remove('hidden');
+                body.classList.add('no-scroll');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                // MENU SLUITEN
+                mobileMenu.classList.add('hidden');
+                body.classList.remove('no-scroll');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+    }
+});
 
 // --- FORM INTERACTION ---
 // Optional: Show filename after selection

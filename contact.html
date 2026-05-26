@@ -1,70 +1,104 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Roelie Prints</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8f9fa; color: #1a202c; }
-        .contact-card { background: white; border-radius: 2rem; padding: 3rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Roelie Prints</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8f9fa;
+      color: #1a202c;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 3rem;
+    }
+  </style>
 </head>
+
 <body class="antialiased">
 
-    <!-- Navigatie -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">Roelie<span class="text-gray-900">Prints</span></a>
+  <!-- Navigatie -->
+  <!-- Navigatie -->
+  <nav class="sticky top-0 z-[100] bg-white border-b border-gray-100 h-20 flex items-center">
+      <div class="max-w-6xl mx-auto px-6 w-full flex justify-between items-center relative z-[120]">
+          <!-- Logo -->
+          <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
+              Roelie<span class="text-gray-900">Prints</span>
+          </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 font-bold text-sm">
-                <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
-                <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
-                <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
-                <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">
-                    Stuur een bericht
-                </a>
-            </div>
+          <!-- Desktop Menu (Verstopt op mobiel) -->
+          <div class="hidden md:flex items-center gap-8 font-bold text-sm text-gray-900">
+              <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
+              <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
+              <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
+              <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition">Bericht sturen</a>
+          </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="md:hidden text-2xl text-gray-900">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+          <!-- Mobiele Knop -->
+          <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900 focus:outline-none p-2">
+              <i id="menu-icon" class="fas fa-bars"></i>
+          </button>
+      </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
-            <a href="index.html" class="block hover:text-indigo-600">Ontdek</a>
-            <a href="creaties.html" class="block hover:text-indigo-600">Mijn Werk</a>
-            <a href="studio.html" class="block hover:text-indigo-600">Over Mij</a>
-            <a href="contact.html" class="block text-indigo-600">Contact</a>
-        </div>
-    </nav>
+      <!-- HET FULLSCREEN MENU -->
+      <!-- We gebruiken h-screen en w-screen met een vaste positie (fixed) -->
+      <div id="mobile-menu" class="hidden fixed inset-0 h-screen w-screen bg-white z-[110] flex flex-col justify-center items-center overflow-hidden">
+          <div class="flex flex-col items-center space-y-10 text-center">
+              <a href="index.html" class="text-3xl font-800 uppercase tracking-tighter text-gray-900">Ontdek</a>
+              <a href="creaties.html" class="text-3xl font-800 uppercase tracking-tighter text-gray-900 ">Mijn Werk</a>
+              <a href="studio.html" class="text-3xl font-800 uppercase tracking-tighter text-gray-900  ">Over Mij</a>
+              <a href="contact.html" class="text-2xl bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-100 active-link-style">Bericht sturen</a>
+          </div>
 
-    <main class="py-20 px-6 max-w-3xl mx-auto">
-        <div class="text-center mb-16">
-            <h1 class="text-5xl md:text-6xl font-800 tracking-tight mb-4 text-gray-900">Laten we <span class="text-indigo-600">praten.</span></h1>
-            <p class="text-gray-500 text-lg">Heb je een vraag over een project of wil je een offerte? Stuur me een berichtje en ik kom er zo snel mogelijk bij je op terug.</p>
-        </div>
+          <!-- Social Icons onderaan het menu -->
+          <div class="absolute bottom-12 flex gap-10 text-2xl text-gray-400">
+              <a href="https://www.instagram.com/roelie.prints/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="mailto:roelie.prints@outlook.com"><i class="far fa-envelope"></i></a>
+          </div>
+      </div>
+  </nav>
 
-        <div class="contact-card shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
-            <!-- Formspree Formulier -->
-            <form action="https://forminit.com/f/dw91y1tsmqk" method="POST" enctype="multipart/form-data" class="space-y-6">
+  <style>
+      /* Zorg dat de body niet scrolt als het menu open is */
+      body.no-scroll {
+          overflow: hidden;
+      }
+
+      /* Highlight voor de actieve pagina (voeg deze klasse handmatig toe aan de juiste link op elke pagina) */
+      .active-page {
+          color: #4f46e5 !important;
+      }
+  </style>
+
+  <main class="py-20 px-6 max-w-3xl mx-auto">
+    <div class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-800 tracking-tight mb-4 text-gray-900">Laten we <span class="text-indigo-600">praten.</span></h1>
+      <p class="text-gray-500 text-lg">Heb je een vraag over een project of wil je een offerte? Stuur me een berichtje en ik kom er zo snel mogelijk bij je op terug.</p>
+    </div>
+
+    <div class="contact-card shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+      <!-- Formspree Formulier -->
+      <form action="https://forminit.com/f/dw91y1tsmqk" method="POST" enctype="multipart/form-data" class="space-y-6">
 
     <div class="grid md:grid-cols-2 gap-6">
         <div class="space-y-2">
             <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Naam</label>
             <!-- Aangepast naar fi-sender-fullName -->
-            <input type="text" name="fi-sender-fullName" placeholder="Je naam" 
+            <input type="text" name="fi-sender-fullName" placeholder="Je naam"
                 class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required>
         </div>
         <div class="space-y-2">
             <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Email</label>
             <!-- Aangepast naar fi-sender-email -->
-            <input type="email" name="fi-sender-email" placeholder="naam@voorbeeld.nl" 
+            <input type="email" name="fi-sender-email" placeholder="naam@voorbeeld.nl"
                 class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required>
         </div>
     </div>
@@ -73,7 +107,7 @@
         <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Wat wil je laten maken?</label>
         <div class="relative">
             <!-- Aangepast naar fi-text-type -->
-            <select name="fi-text-type" 
+            <select name="fi-text-type"
                 class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl appearance-none outline-none cursor-pointer">
                 <option>3D-printen op maat</option>
                 <option>Technisch ontwerp (CAD)</option>
@@ -89,7 +123,7 @@
     <div class="space-y-2">
         <label class="text-[10px] font-800 uppercase tracking-widest text-gray-400 ml-1">Je bericht</label>
         <!-- Aangepast naar fi-text-message -->
-        <textarea name="fi-text-message" rows="4" placeholder="Vertel me kort wat je idee is..." 
+        <textarea name="fi-text-message" rows="4" placeholder="Vertel me kort wat je idee is..."
             class="w-full bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-600 transition-all duration-300 py-4 px-5 rounded-2xl outline-none" required></textarea>
     </div>
 
@@ -104,41 +138,46 @@
         </div>
     </div>
 
-    <button type="submit" 
+    <button type="submit"
         class="w-full bg-indigo-600 text-white py-5 rounded-2xl font-800 text-lg hover:bg-indigo-700 hover:-translate-y-1 shadow-xl shadow-indigo-100 transition-all duration-300">
         Bericht versturen
     </button>
 </form>
-        </div>
+    </div>
 
-        <div class="mt-16 text-center text-gray-400 text-sm">
-            <p>Direct mailen? <a href="mailto:roelie.prints@outlook.com" class="text-gray-900 font-bold hover:text-indigo-600 transition">roelie.prints@outlook.com</a></p>
-        </div>
-    </main>
+    <div class="mt-16 text-center text-gray-400 text-sm">
+      <p>Direct mailen? <a href="mailto:roelie.prints@outlook.com" class="text-gray-900 font-bold hover:text-indigo-600 transition">roelie.prints@outlook.com</a></p>
+    </div>
+  </main>
 
-    <footer class="py-12 text-center text-gray-400 text-xs font-bold uppercase tracking-widest border-t border-gray-100">
-        <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
-    </footer>
+  <footer class="py-12 text-center text-gray-400 text-xs font-bold uppercase tracking-widest border-t border-gray-100">
+    <p>© 2024 Roelie Prints | Yarno Van Rulo</p>
+  </footer>
 
-    <script>
-        // Mobiel menu toggle
-        const menuBtn = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+  <script>
+    // Mobiel menu toggle (ID aangepast)
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('hidden');
         });
+    }
 
-        // Laat de bestandsnaam zien na selectie
-        const fileInput = document.getElementById('file-upload');
-        const fileNameDisplay = document.getElementById('file-name');
+    // Laat de bestandsnaam zien na selectie (ongewijzigd)
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('file-name');
 
+    if (fileInput) {
         fileInput.addEventListener('change', function(e) {
-            if(this.files && this.files.length > 0) {
-                fileNameDisplay.innerText = "Geselecteerd: " + this.files[0].name;
-                fileNameDisplay.classList.add('text-indigo-600', 'font-bold');
-            }
+          if (this.files && this.files.length > 0) {
+            fileNameDisplay.innerText = "Geselecteerd: " + this.files[0].name;
+            fileNameDisplay.classList.add('text-indigo-600', 'font-bold');
+          }
         });
-    </script>
+    }
+  </script>
 
 </body>
+
 </html>

@@ -19,37 +19,56 @@
 <body class="antialiased">
 
     <!-- Navigatie -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-        <!-- Logo -->
-        <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
-            Roelie<span class="text-gray-900">Prints</span>
-        </a>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8 font-bold text-sm">
-            <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
-            <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
-            <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
-            <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
-                Stuur een bericht
+    <nav class="sticky top-0 z-[100] bg-white border-b border-gray-100 h-20 flex items-center">
+        <div class="max-w-6xl mx-auto px-6 w-full flex justify-between items-center relative z-[120]">
+            <!-- Logo -->
+            <a href="index.html" class="text-xl font-800 tracking-tighter uppercase text-indigo-600">
+                Roelie<span class="text-gray-900">Prints</span>
             </a>
+
+            <!-- Desktop Menu (Verstopt op mobiel) -->
+            <div class="hidden md:flex items-center gap-8 font-bold text-sm text-gray-900">
+                <a href="index.html" class="hover:text-indigo-600 transition">Ontdek</a>
+                <a href="creaties.html" class="hover:text-indigo-600 transition">Mijn Werk</a>
+                <a href="studio.html" class="hover:text-indigo-600 transition">Over Mij</a>
+                <a href="contact.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition">Bericht sturen</a>
+            </div>
+
+            <!-- Mobiele Knop -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900 focus:outline-none p-2">
+                <i id="menu-icon" class="fas fa-bars"></i>
+            </button>
         </div>
 
-        <!-- Mobile Toggle -->
-        <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-900">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
+        <!-- HET FULLSCREEN MENU -->
+        <!-- We gebruiken h-screen en w-screen met een vaste positie (fixed) -->
+        <div id="mobile-menu" class="hidden fixed inset-0 h-screen w-screen bg-white z-[110] flex flex-col justify-center items-center overflow-hidden">
+            <div class="flex flex-col items-center space-y-10 text-center">
+              <a href="index.html" class="text-3xl font-800 uppercase tracking-tighter text-gray-900 active-link-style">Ontdek</a>
+              <a href="creaties.html" class="text-3xl font-800 uppercase tracking-tighter text-gray-900 ">Mijn Werk</a>
+              <a href="studio.html" class="text-3xl font-800 uppercase tracking-tighter text-gray-900  ">Over Mij</a>
+              <a href="contact.html" class="text-2xl bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">Bericht sturen</a>
+            </div>
 
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 font-bold">
-        <a href="index.html" class="block hover:text-indigo-600">Ontdek</a>
-        <a href="creaties.html" class="block hover:text-indigo-600">Mijn Werk</a>
-        <a href="studio.html" class="block hover:text-indigo-600">Over Mij</a>
-        <a href="contact.html" class="block text-indigo-600">Contact</a>
-    </div>
-</nav>
+            <!-- Social Icons onderaan het menu -->
+            <div class="absolute bottom-12 flex gap-10 text-2xl text-gray-400">
+                <a href="https://www.instagram.com/roelie.prints/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:roelie.prints@outlook.com"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        /* Zorg dat de body niet scrolt als het menu open is */
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        /* Highlight voor de actieve pagina (voeg deze klasse handmatig toe aan de juiste link op elke pagina) */
+        .active-page {
+            color: #4f46e5 !important;
+        }
+    </style>
 
     <!-- Hero: Welkom in de Studio -->
     <header class="hero-bg pt-20 pb-32 px-6">
@@ -133,5 +152,6 @@
         </div>
     </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
